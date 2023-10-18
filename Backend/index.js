@@ -7,9 +7,11 @@ connectDb();
 
 app.use(express.json())
 const userRt = require('./routes/userRt');
+const chatRt = require('./routes/chatRt');
 
 
 app.use('/api/user', userRt);
+app.use('/api/chat', chatRt);
 
 
 const port = process.env.PORT || 5000;
