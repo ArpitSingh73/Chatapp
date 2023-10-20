@@ -1,7 +1,5 @@
 const mongoose = require("mongoose");
 const colors = require("colors");
-const env = require('dotenv');
-env.config();
 
 const connectDB = async () => {
   try {
@@ -10,7 +8,7 @@ const connectDB = async () => {
       useUnifiedTopology: true,
     });
 
-    console.log(`MongoDB Connected: ${conn.connection.host}`.red.underline);
+    console.log(`MongoDB Connected: ${conn.connection.host}`.blue.underline);
   } catch (error) {
     console.error(`Error: ${error.message}`.red.bold);
     process.exit(1); // Exit with a non-zero status code to indicate an error

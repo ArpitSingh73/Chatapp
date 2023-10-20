@@ -19,18 +19,19 @@ import {
 import { Tooltip } from "@chakra-ui/tooltip";
 import { BellIcon, ChevronDownIcon } from "@chakra-ui/icons";
 import { Avatar } from "@chakra-ui/avatar";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
 import { useToast } from "@chakra-ui/toast";
-import ChatLoading from "../ChatLoading";
+import ChatLoading from "./ChatLoading";
 import { Spinner } from "@chakra-ui/spinner";
 import ProfileModal from "./ProfileModal";
 import NotificationBadge from "react-notification-badge";
 import { Effect } from "react-notification-badge";
-import { getSender } from "../../config/ChatLogics";
-import UserListItem from "../userAvatar/UserListItem";
-import { ChatState } from "../../Context/ChatProvider";
+import { getSender } from "../config/ChatLogics";
+import UserListItem from "./UserListitem";
+import { ChatState } from "../Context/Chatprovider";
+// import { ChatLoading } from "./ChatLoading";
 
 function SideDrawer() {
   const [search, setSearch] = useState("");
@@ -49,11 +50,11 @@ function SideDrawer() {
 
   const toast = useToast();
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const history = useHistory();
+  const history = useNavigate();
 
   const logoutHandler = () => {
     localStorage.removeItem("userInfo");
-    history.push("/");
+    history("/");
   };
 
   const handleSearch = async () => {

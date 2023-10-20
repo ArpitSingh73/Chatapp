@@ -5,9 +5,9 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { getSender } from "../config/ChatLogics";
 import ChatLoading from "./ChatLoading";
-import GroupChatModal from "./miscellaneous/GroupChatModal";
+import GroupChatModal from "./GroupChatModal";
 import { Button } from "@chakra-ui/react";
-import { ChatState } from "../Context/ChatProvider";
+import { ChatState } from "../Context/Chatprovider";
 
 const MyChats = ({ fetchAgain }) => {
   const [loggedUser, setLoggedUser] = useState();
