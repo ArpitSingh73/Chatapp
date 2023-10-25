@@ -74,7 +74,7 @@ function SideDrawer() {
 
       const config = {
         headers: {
-          Authorization: `Bearer ${user.token}`,
+          authorization: `Bearer ${user.token}`,
         },
       };
 
@@ -102,7 +102,7 @@ function SideDrawer() {
       const config = {
         headers: {
           "Content-type": "application/json",
-          Authorization: `Bearer ${user.token}`,
+          authorization: `Bearer ${user.token}`,
         },
       };
       const { data } = await axios.post(`/api/chat`, { userId }, config);
@@ -126,13 +126,13 @@ function SideDrawer() {
   return (
     <>
       <Box
-        d="flex"
+        display="flex"
         justifyContent="space-between"
         alignItems="center"
-        bg="white"
+        bg="grey"
         w="100%"
-        p="5px 10px 5px 10px"
-        borderWidth="5px"
+        p="15px 10px 15px 10px"
+        // borderWidth="5px"
       >
         <Tooltip label="Search Users to chat" hasArrow placement="bottom-end">
           <Button variant="ghost" onClick={onOpen}>
@@ -142,8 +142,8 @@ function SideDrawer() {
             </Text>
           </Button>
         </Tooltip>
-        <Text fontSize="2xl" fontFamily="Work sans">
-          Talk-A-Tive
+        <Text fontSize="2xl" >
+          ChaT
         </Text>
         <div>
           <Menu>

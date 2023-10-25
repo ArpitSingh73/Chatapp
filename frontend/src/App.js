@@ -26,8 +26,8 @@ function App() {
     <div className="App">
       <Routes>
       {/*  <Route exact path="/" element={<Home show={show} />}></Route> */}
-      <Route  path="/" element={<Homepage/>} ></Route> 
-      <Route  path="/chats" element={<Chatpage/>}  ></Route> 
+      <Route exact path="/" element={<Homepage/>} ></Route> 
+      <Route exact path="/chats" element={<Chatpage/>}  ></Route> 
      
       </Routes>
     </div>

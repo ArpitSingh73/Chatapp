@@ -6,6 +6,7 @@ import { useToast } from "@chakra-ui/toast";
 import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router";
+// import { ChatState , user} from "../Context/Chatprovider";
 
 const Signup = () => {
   const [show, setShow] = useState(false);
@@ -21,6 +22,7 @@ const Signup = () => {
   const [picLoading, setPicLoading] = useState(false);
 
   const submitHandler = async () => {
+
     setPicLoading(true);
     if (!name || !email || !password || !confirmpassword) {
       toast({
@@ -70,6 +72,10 @@ const Signup = () => {
       });
       localStorage.setItem("userInfo", JSON.stringify(data));
       setPicLoading(false);
+      // const  {setUser, user}  = ChatState();
+      // const userInfo = JSON.parse(localStorage.getItem("userInfo"));
+      // setUser(userInfo);
+      // console.log(user)
       history("/chats");
     } catch (error) {
       toast({
