@@ -7,7 +7,7 @@ import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router";
 // import { ChatState , user} from "../Context/Chatprovider";
-
+import "./files.css"
 const Signup = () => {
   const [show, setShow] = useState(false);
   const handleClick = () => setShow(!show);
@@ -28,7 +28,7 @@ const Signup = () => {
       toast({
         title: "Please Fill all the Feilds",
         status: "warning",
-        duration: 5000,
+        duration: 1000,
         isClosable: true,
         position: "bottom",
       });
@@ -138,53 +138,73 @@ const Signup = () => {
   return (
     <VStack spacing="5px">
       <FormControl id="first-name" isRequired>
-        <FormLabel>Name</FormLabel>
+        <FormLabel color={"#F9FBE7"}>Name</FormLabel>
         <Input
+          color={"#F9FBE7"}
+          borderColor={"#0D0D0D"}
+          // borderRadius={"8"}
+          borderWidth="2px"
           placeholder="Enter Your Name"
           onChange={(e) => setName(e.target.value)}
         />
       </FormControl>
       <FormControl id="email" isRequired>
-        <FormLabel>Email Address</FormLabel>
+        <FormLabel color={"#F9FBE7"}>Email Address</FormLabel>
         <Input
+          color={"#F9FBE7"}
+          borderColor={"#0D0D0D"}
+          // borderRadius={"8"}
+          borderWidth="2px"
           type="email"
           placeholder="Enter Your Email Address"
           onChange={(e) => setEmail(e.target.value)}
         />
       </FormControl>
       <FormControl id="password" isRequired>
-        <FormLabel>Password</FormLabel>
+        <FormLabel color={"#F9FBE7"}>Password</FormLabel>
         <InputGroup size="md">
           <Input
+            color={"#F9FBE7"}
+            borderColor={"#0D0D0D"}
+            // borderRadius={"8"}
+            borderWidth="2px"
             type={show ? "text" : "password"}
             placeholder="Enter Password"
             onChange={(e) => setPassword(e.target.value)}
           />
           <InputRightElement width="4.5rem">
-            <Button h="1.75rem" size="sm" onClick={handleClick}>
+            <Button h="1.75rem" size="sm" onClick={handleClick} bg="#268B81">
               {show ? "Hide" : "Show"}
             </Button>
           </InputRightElement>
         </InputGroup>
       </FormControl>
       <FormControl id="password" isRequired>
-        <FormLabel>Confirm Password</FormLabel>
+        <FormLabel color={"#F9FBE7"}>Confirm Password</FormLabel>
         <InputGroup size="md">
           <Input
+            color={"#F9FBE7"}
+            borderColor={"#0D0D0D"}
+            // borderRadius={"8"}
+            borderWidth="2px"
             type={show ? "text" : "password"}
             placeholder="Confirm password"
             onChange={(e) => setConfirmpassword(e.target.value)}
           />
           <InputRightElement width="4.5rem">
-            <Button h="1.75rem" size="sm" onClick={handleClick}>
+            <Button h="1.75rem" size="sm" onClick={handleClick} bg="#268B81">
               {show ? "Hide" : "Show"}
             </Button>
           </InputRightElement>
         </InputGroup>
       </FormControl>
       <FormControl id="pic">
-        <FormLabel>Upload your Picture</FormLabel>
+        <FormLabel color={"#F9FBE7"}>Upload your Picture</FormLabel>
         <Input
+          color={"#F9FBE7"}
+          borderColor={"#0D0D0D"}
+          // borderRadius={"8"}
+          borderWidth="2px"
           type="file"
           p={1.5}
           accept="image/*"
@@ -192,7 +212,9 @@ const Signup = () => {
         />
       </FormControl>
       <Button
-        colorScheme="blue"
+        // colorScheme="blue"
+        boxShadow={"3px 3px 3px"}
+        bg="#268B81"
         width="100%"
         style={{ marginTop: 15 }}
         onClick={submitHandler}

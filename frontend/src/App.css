@@ -3,9 +3,10 @@
 .App {
   min-height: 100vh;
   display: flex;
-  background-image: url("./monster-background-icons-b1.jpg");
-  background-position: center; 
-   background-size: cover; 
+  background-color: #514e4e;
+  /* background-image: url("./monster-background-icons-b1.jpg"); */
+  /* background-position: center;  */
+  /* background-size: cover;  */
 }
 
 ::-webkit-scrollbar {

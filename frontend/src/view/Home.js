@@ -29,23 +29,39 @@ function Homepage() {
         // justifyContent="center"
         // alignItems="center"
         textAlign="center"
+        fontSize={"x-large"}
         p={3}
         // backgroundColor="grey"
-        bg="white"
+        bg="#878787"
         w="100%"
         m="40px 0 15px 0"
-        borderRadius="lg"
-        borderWidth="1px"
+        borderRadius={"8"}
+        borderColor={"#0D0D0D"}
+        borderWidth="2px"
+        boxShadow={"2px 3px 1px"}
       >
-        <Text fontSize="4xl">
-          Talk-A-Tive
+        <Text fontSize="5xl" textDecoration={"line-through"}>
+          TalK
         </Text>
       </Box>
-      <Box bg="white" w="100%" p={4} borderRadius="lg" borderWidth="1px">
-        <Tabs isFitted variant="soft-rounded">
+      <Box
+        // bg="#BEBFB1"
+        w="100%"
+        p={4}
+        borderRadius={"8"}
+        borderColor={"#0D0D0D"}
+        borderWidth="2px"
+        boxShadow={"2px 3px 1px"}
+      >
+        <Tabs
+          isFitted
+          variant="soft-rounded"
+          colorScheme="blackAlpha"
+          bgColor={""}
+        >
           <TabList mb="1em">
-            <Tab>Login</Tab>
-            <Tab>Sign Up</Tab>
+            <Tab textColor={"white"}>Login</Tab>
+            <Tab textColor={"white"}>Sign Up</Tab>
           </TabList>
           <TabPanels>
             <TabPanel>

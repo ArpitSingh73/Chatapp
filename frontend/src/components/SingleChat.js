@@ -184,6 +184,7 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
                     user={getSenderFull(user, selectedChat.users)}
                   />
                 </>
+                
               ) : (
                 <>
                   {selectedChat.chatName.toUpperCase()}
@@ -197,15 +198,18 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
           </Text>
           <Box
             dispaly="flex"
-            flexDir="column"
+
+            // // alignItems="center"
+            flexDirection="column"
             justifyContent="flex-end"
             p={3}
-            bg="#E8E8E8"
+            bg="olive"
             w="100%"
             h="91%"
             borderRadius="lg"
-            overflow="hidden"
+            // // overflow= "hidden"
             overflowY="hidden"
+            display="flex"
             
           >
             {loading ? (
@@ -226,6 +230,7 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
               onKeyDown={sendMessage}
               id="first-name"
               isRequired
+              // marginTop="97"
               mt={3}
             >
               {istyping ? (
@@ -252,7 +257,7 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
         </>
       ) : (
         // to get socket.io on same page
-        <Box d="flex" alignItems="center" justifyContent="center" h="100%">
+        <Box display="flex" alignItems="center" justifyContent="center" h="100%">
           <Text fontSize="3xl" pb={3} fontFamily="Work sans">
             Click on a user to start chatting
           </Text>
