@@ -34,7 +34,7 @@ function Homepage() {
         // backgroundColor="grey"
         bg="#878787"
         w="100%"
-        m="40px 0 15px 0"
+        m="25% 0 15px 0"
         borderRadius={"8"}
         borderColor={"#0D0D0D"}
         borderWidth="2px"
@@ -48,6 +48,7 @@ function Homepage() {
         // bg="#BEBFB1"
         w="100%"
         p={4}
+        marginBottom={"10%"}
         borderRadius={"8"}
         borderColor={"#0D0D0D"}
         borderWidth="2px"
@@ -60,8 +61,8 @@ function Homepage() {
           bgColor={""}
         >
           <TabList mb="1em">
-            <Tab textColor={"white"}>Login</Tab>
-            <Tab textColor={"white"}>Sign Up</Tab>
+            <Tab textColor={"white"} fontSize={"2xl"}>Login</Tab>
+            <Tab textColor={"white"} fontSize={"2xl"}>Sign Up</Tab>
           </TabList>
           <TabPanels>
             <TabPanel>

@@ -131,20 +131,25 @@ function SideDrawer() {
         alignItems="center"
         bg="grey"
         w="100%"
+        // textColor={"white"}
         p="15px 10px 15px 10px"
         // borderWidth="5px"
       >
-        <Tooltip label="Search Users to chat" hasArrow placement="bottom-end">
+        <Tooltip
+          label="Search Users to chat"
+          hasArrow
+          // fontSize={"2xl"}
+          placement="bottom-end"
+          textColor={"white"}
+        >
           <Button variant="ghost" onClick={onOpen}>
             <i className="fas fa-search"></i>
-            <Text d={{ base: "none", md: "flex" }} px={4}>
-              Search User
+            <Text d={{ base: "none", md: "flex" }} px={4} fontWeight={"bold"} fontSize={"xl"}>
+              Search Users
             </Text>
           </Button>
         </Tooltip>
-        <Text fontSize="2xl" >
-          ChaT
-        </Text>
+        <Text fontSize="2xl">ChaT</Text>
         <div>
           <Menu>
             <MenuButton p={1}>
@@ -154,7 +159,7 @@ function SideDrawer() {
               />
               <BellIcon fontSize="2xl" m={1} />
             </MenuButton>
-            <MenuList pl={2}>
+            <MenuList pl={2} backgroundColor={"gold"}>
               {!notification.length && "No New Messages"}
               {notification.map((notif) => (
                 <MenuItem
@@ -193,17 +198,19 @@ function SideDrawer() {
 
       <Drawer placement="left" onClose={onClose} isOpen={isOpen}>
         <DrawerOverlay />
-        <DrawerContent>
-          <DrawerHeader borderBottomWidth="1px">Search Users</DrawerHeader>
+        <DrawerContent backgroundColor={"#222424"}>
+          <DrawerHeader borderBottomWidth="1px" textColor={"white"}>Search Users</DrawerHeader>
           <DrawerBody>
-            <Box d="flex" pb={2}>
+            <Box d="flex" justifyContent={"space-between"} pt={1} pb={1} pl={1}>
               <Input
-                placeholder="Search by name or email"
-                mr={2}
+                placeholder="Enter name or email"
+                mr={"1"}
+                maxWidth={"75%"}
+                textColor={"white"}
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
               />
-              <Button onClick={handleSearch}>Go</Button>
+              <Button onClick={handleSearch} ml={1} backgroundColor={"gold"} >Go</Button>
             </Box>
             {loading ? (
               <ChatLoading />

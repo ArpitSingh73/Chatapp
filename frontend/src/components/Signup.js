@@ -7,7 +7,7 @@ import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router";
 // import { ChatState , user} from "../Context/Chatprovider";
-import "./files.css"
+import "./files.css";
 const Signup = () => {
   const [show, setShow] = useState(false);
   const handleClick = () => setShow(!show);
@@ -22,7 +22,6 @@ const Signup = () => {
   const [picLoading, setPicLoading] = useState(false);
 
   const submitHandler = async () => {
-
     setPicLoading(true);
     if (!name || !email || !password || !confirmpassword) {
       toast({
@@ -140,6 +139,8 @@ const Signup = () => {
       <FormControl id="first-name" isRequired>
         <FormLabel color={"#F9FBE7"}>Name</FormLabel>
         <Input
+          fontSize={"xl"}
+          height={"50px"}
           color={"#F9FBE7"}
           borderColor={"#0D0D0D"}
           // borderRadius={"8"}
@@ -151,6 +152,8 @@ const Signup = () => {
       <FormControl id="email" isRequired>
         <FormLabel color={"#F9FBE7"}>Email Address</FormLabel>
         <Input
+          fontSize={"xl"}
+          height={"50px"}
           color={"#F9FBE7"}
           borderColor={"#0D0D0D"}
           // borderRadius={"8"}
@@ -164,6 +167,8 @@ const Signup = () => {
         <FormLabel color={"#F9FBE7"}>Password</FormLabel>
         <InputGroup size="md">
           <Input
+            fontSize={"xl"}
+            height={"50px"}
             color={"#F9FBE7"}
             borderColor={"#0D0D0D"}
             // borderRadius={"8"}
@@ -173,7 +178,16 @@ const Signup = () => {
             onChange={(e) => setPassword(e.target.value)}
           />
           <InputRightElement width="4.5rem">
-            <Button h="1.75rem" size="sm" onClick={handleClick} bg="#268B81">
+            <Button
+              h="1.80rem"
+              size="lg"
+              marginTop={"25%"}
+              marginRight={"10%"}
+              marginBottom={"1%"}
+              marg
+              onClick={handleClick}
+              bg="#268B81"
+            >
               {show ? "Hide" : "Show"}
             </Button>
           </InputRightElement>
@@ -183,6 +197,8 @@ const Signup = () => {
         <FormLabel color={"#F9FBE7"}>Confirm Password</FormLabel>
         <InputGroup size="md">
           <Input
+            fontSize={"xl"}
+            height={"50px"}
             color={"#F9FBE7"}
             borderColor={"#0D0D0D"}
             // borderRadius={"8"}
@@ -192,7 +208,16 @@ const Signup = () => {
             onChange={(e) => setConfirmpassword(e.target.value)}
           />
           <InputRightElement width="4.5rem">
-            <Button h="1.75rem" size="sm" onClick={handleClick} bg="#268B81">
+            <Button
+              h="1.80rem"
+              size="lg"
+              marginTop={"25%"}
+              marginRight={"10%"}
+              marginBottom={"1%"}
+              marg
+              onClick={handleClick}
+              bg="#268B81"
+            >
               {show ? "Hide" : "Show"}
             </Button>
           </InputRightElement>
@@ -201,6 +226,8 @@ const Signup = () => {
       <FormControl id="pic">
         <FormLabel color={"#F9FBE7"}>Upload your Picture</FormLabel>
         <Input
+          fontSize={"xl"}
+          height={"50px"}
           color={"#F9FBE7"}
           borderColor={"#0D0D0D"}
           // borderRadius={"8"}

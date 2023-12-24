@@ -174,6 +174,7 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
             <IconButton
               d={{ base: "flex", md: "none" }}
               icon={<ArrowBackIcon />}
+              backgroundColor={"gold"}
               onClick={() => setSelectedChat("")}
             />
             {messages &&
@@ -184,7 +185,6 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
                     user={getSenderFull(user, selectedChat.users)}
                   />
                 </>
-                
               ) : (
                 <>
                   {selectedChat.chatName.toUpperCase()}
@@ -198,19 +198,18 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
           </Text>
           <Box
             dispaly="flex"
-
             // // alignItems="center"
             flexDirection="column"
             justifyContent="flex-end"
             p={3}
-            bg="olive"
+            bg="#566258"
+            // bg="#464435"
             w="100%"
             h="91%"
             borderRadius="lg"
             // // overflow= "hidden"
             overflowY="hidden"
             display="flex"
-            
           >
             {loading ? (
               <Spinner
@@ -226,38 +225,53 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
               </div>
             )}
 
-            <FormControl
-              onKeyDown={sendMessage}
-              id="first-name"
-              isRequired
-              // marginTop="97"
-              mt={3}
-            >
-              {istyping ? (
-                <div>
-                  <Lottie
-                    options={defaultOptions}
-                    // height={50}
-                    width={70}
-                    style={{ marginBottom: 15, marginLeft: 0 }}
-                  />
-                </div>
-              ) : (
-                <></>
-              )}
-              <Input
-                variant="filled"
-                bg="#E0E0E0"
-                placeholder="Enter a message.."
-                value={newMessage}
-                onChange={typingHandler}
-              />
-            </FormControl>
+            <Box>
+              <FormControl
+                onKeyDown={sendMessage}
+                // onclick={sendMessage}
+                id="first-name"
+                isRequired
+                // marginTop="97"
+                mt={3}
+              >
+                {istyping ? (
+                  <div>
+                    <Lottie
+                      options={defaultOptions}
+                      // height={50}
+                      width={70}
+                      style={{ marginBottom: 15, marginLeft: 0 }}
+                    />
+                  </div>
+                ) : (
+                  <></>
+                )}
+                <Input
+                  variant="filled"
+                  backgroundColor="#E0E0E0"
+                  placeholder="Enter a message..."
+                  value={newMessage}
+                  textColor={"white"}
+                  height={"60px"}
+                  fontSize={"xl"}
+                  marginTop={"7px"}
+                  onChange={typingHandler}
+                  maxWidth={"94%"}
+                />
+                {/* <Input placeholder="Send" type="submit" maxHeight={"60px"} maxWidth={"50px"} onClick={sendMessage} /> */}
+                {/* <button onClick={sendMessage}>Send</button> */}
+              </FormControl>
+            </Box>
           </Box>
         </>
       ) : (
         // to get socket.io on same page
-        <Box display="flex" alignItems="center" justifyContent="center" h="100%">
+        <Box
+          display="flex"
+          alignItems="center"
+          justifyContent="center"
+          h="100%"
+        >
           <Text fontSize="3xl" pb={3} fontFamily="Work sans">
             Click on a user to start chatting
           </Text>

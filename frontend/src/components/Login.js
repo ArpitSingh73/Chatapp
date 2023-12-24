@@ -81,7 +81,10 @@ const Login = () => {
       <FormControl id="email" isRequired>
         <FormLabel color={"#F9FBE7"}>Email Address</FormLabel>
         <Input
-          color={"#F9FBE7"}
+          height={"50px"}
+          // color={"#F9FBE7"}
+          textColor={"white"}
+          fontSize={"xl"}
           borderColor={"#0D0D0D"}
           // borderRadius={"8"}
           borderWidth="2px"
@@ -96,6 +99,8 @@ const Login = () => {
         <InputGroup size="md">
           <Input
             color={"#F9FBE7"}
+            fontSize={"xl"}
+            height={"50px"}
             borderColor={"#0D0D0D"}
             // borderRadius={"8"}
             borderWidth="2px"
@@ -105,7 +110,16 @@ const Login = () => {
             placeholder="Enter password"
           />
           <InputRightElement width="4.5rem">
-            <Button h="1.75rem" size="sm" onClick={handleClick} bg="#268B81">
+            <Button
+              h="1.80rem"
+              size="lg"
+              marginTop={"25%"}
+              marginRight={"10%"}
+              marginBottom={"1%"}
+              marg
+              onClick={handleClick}
+              bg="#268B81"
+            >
               {show ? "Hide" : "Show"}
             </Button>
           </InputRightElement>
@@ -115,6 +129,7 @@ const Login = () => {
         // colorScheme=""
         bg="#268B81"
         width="100%"
+        fontSize={"xl"}
         style={{ marginTop: 15 }}
         onClick={submitHandler}
         isLoading={loading}
