@@ -2,6 +2,7 @@ import { FormControl } from "@chakra-ui/form-control";
 import { Input } from "@chakra-ui/input";
 import { Box, Text } from "@chakra-ui/layout";
 import "./styles.css";
+import "./button.css";
 import { IconButton, Spinner, useToast } from "@chakra-ui/react";
 import { getSender, getSenderFull } from "../config/ChatLogics";
 import { useEffect, useState } from "react";
@@ -14,7 +15,9 @@ import animationData from "../animations/typing.json";
 import io from "socket.io-client";
 import UpdateGroupChatModal from "./UpdateGroupChatModal";
 import { ChatState } from "../Context/Chatprovider";
-const ENDPOINT = "http://localhost:5000"; // "https://talk-a-tive.herokuapp.com"; -> After deployment
+const ENDPOINT = "http://localhost:2000"; // "https://talk-a-tive.herokuapp.com"; -> After deployment
+
+
 var socket, selectedChatCompare;
 
 const SingleChat = ({ fetchAgain, setFetchAgain }) => {
@@ -62,7 +65,7 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
         title: "Error Occured!",
         description: "Failed to Load the Messages",
         status: "error",
-        duration: 5000,
+        duration: 2000,
         isClosable: true,
         position: "bottom",
       });
@@ -95,7 +98,7 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
           title: "Error Occured!",
           description: "Failed to send the Message",
           status: "error",
-          duration: 5000,
+          duration: 2000,
           isClosable: true,
           position: "bottom",
         });
@@ -167,6 +170,7 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
             px={2}
             w="100%"
             fontFamily="Work sans"
+            fontWeight={"bold"}
             display="flex"
             justifyContent={{ base: "space-between" }}
             alignItems="center"
@@ -175,6 +179,7 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
               d={{ base: "flex", md: "none" }}
               icon={<ArrowBackIcon />}
               backgroundColor={"gold"}
+              // boxShadow={"dark-lg"}
               onClick={() => setSelectedChat("")}
             />
             {messages &&
@@ -182,7 +187,8 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
                 <>
                   {getSender(user, selectedChat.users)}
                   <ProfileModal
-                    user={getSenderFull(user, selectedChat.users)}
+                  user={getSenderFull(user, selectedChat.users)}
+                  // backgroundColor={"gold"}
                   />
                 </>
               ) : (
@@ -192,6 +198,7 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
                     fetchMessages={fetchMessages}
                     fetchAgain={fetchAgain}
                     setFetchAgain={setFetchAgain}
+                    // backgroundColor="gold"
                   />
                 </>
               ))}
@@ -218,6 +225,7 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
                 h={20}
                 alignSelf="center"
                 margin="auto"
+
               />
             ) : (
               <div className="messages">
@@ -247,19 +255,19 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
                   <></>
                 )}
                 <Input
-                  variant="filled"
+                  variant="filled"  
                   backgroundColor="#E0E0E0"
                   placeholder="Enter a message..."
                   value={newMessage}
                   textColor={"white"}
-                  height={"60px"}
+                  height={"45px"}
                   fontSize={"xl"}
                   marginTop={"7px"}
                   onChange={typingHandler}
-                  maxWidth={"94%"}
+                  maxWidth={"100%"}
                 />
                 {/* <Input placeholder="Send" type="submit" maxHeight={"60px"} maxWidth={"50px"} onClick={sendMessage} /> */}
-                {/* <button onClick={sendMessage}>Send</button> */}
+                {/* <button onClick={sendMessage} id="send" >Send</button> */}
               </FormControl>
             </Box>
           </Box>

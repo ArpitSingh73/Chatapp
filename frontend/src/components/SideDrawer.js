@@ -144,7 +144,12 @@ function SideDrawer() {
         >
           <Button variant="ghost" onClick={onOpen}>
             <i className="fas fa-search"></i>
-            <Text d={{ base: "none", md: "flex" }} px={4} fontWeight={"bold"} fontSize={"xl"}>
+            <Text
+              d={{ base: "none", md: "flex" }}
+              px={4}
+              fontWeight={"bold"}
+              fontSize={"xl"}
+            >
               Search Users
             </Text>
           </Button>
@@ -154,12 +159,13 @@ function SideDrawer() {
           <Menu>
             <MenuButton p={1}>
               <NotificationBadge
+                // backgroundColor={"gold"}
                 count={notification.length}
                 effect={Effect.SCALE}
               />
               <BellIcon fontSize="2xl" m={1} />
             </MenuButton>
-            <MenuList pl={2} backgroundColor={"gold"}>
+            <MenuList pl={2}>
               {!notification.length && "No New Messages"}
               {notification.map((notif) => (
                 <MenuItem
@@ -176,8 +182,13 @@ function SideDrawer() {
               ))}
             </MenuList>
           </Menu>
+
           <Menu>
-            <MenuButton as={Button} bg="white" rightIcon={<ChevronDownIcon />}>
+            <MenuButton
+              as={Button}
+              backgroundColor={"#323A3E"}
+              rightIcon={<ChevronDownIcon />}
+            >
               <Avatar
                 size="sm"
                 cursor="pointer"
@@ -185,12 +196,14 @@ function SideDrawer() {
                 src={user.pic}
               />
             </MenuButton>
-            <MenuList>
+            <MenuList backgroundColor={"#909090"} boxShadow={"dark-lg"}>
               <ProfileModal user={user}>
-                <MenuItem>My Profile</MenuItem>{" "}
+                <MenuItem backgroundColor={"#909090"}>My Profile</MenuItem>{" "}
               </ProfileModal>
               <MenuDivider />
-              <MenuItem onClick={logoutHandler}>Logout</MenuItem>
+              <MenuItem backgroundColor={"#909090"} onClick={logoutHandler}>
+                Logout
+              </MenuItem>
             </MenuList>
           </Menu>
         </div>
@@ -199,7 +212,9 @@ function SideDrawer() {
       <Drawer placement="left" onClose={onClose} isOpen={isOpen}>
         <DrawerOverlay />
         <DrawerContent backgroundColor={"#222424"}>
-          <DrawerHeader borderBottomWidth="1px" textColor={"white"}>Search Users</DrawerHeader>
+          <DrawerHeader borderBottomWidth="1px" textColor={"white"}>
+            Search Users
+          </DrawerHeader>
           <DrawerBody>
             <Box d="flex" justifyContent={"space-between"} pt={1} pb={1} pl={1}>
               <Input
@@ -210,7 +225,9 @@ function SideDrawer() {
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
               />
-              <Button onClick={handleSearch} ml={1} backgroundColor={"gold"} >Go</Button>
+              <Button onClick={handleSearch} ml={1} backgroundColor={"gold"}>
+                Go
+              </Button>
             </Box>
             {loading ? (
               <ChatLoading />

@@ -67,7 +67,7 @@ import {
           title: "Error Occured!",
           description: "Failed to Load the Search Results",
           status: "error",
-          duration: 5000,
+          duration: 2000,
           isClosable: true,
           position: "bottom-left",
         });
@@ -127,12 +127,13 @@ import {
   
     return (
       <>
-        <span onClick={onOpen}>{children}</span>
-  
+        <span onClick={onOpen}>{children} </span>
+
         <Modal onClose={onClose} isOpen={isOpen} isCentered>
           <ModalOverlay />
           <ModalContent>
             <ModalHeader
+              backgroundColor={"#566258"}
               fontSize="35px"
               fontFamily="Work sans"
               d="flex"
@@ -141,9 +142,15 @@ import {
               Create Group Chat
             </ModalHeader>
             <ModalCloseButton />
-            <ModalBody d="flex" flexDir="column" alignItems="center">
+            <ModalBody
+              d="flex"
+              flexDir="column"
+              backgroundColor={"#222424"}
+              alignItems="center"
+            >
               <FormControl>
                 <Input
+                  textColor={"white"}
                   placeholder="Chat Name"
                   mb={3}
                   onChange={(e) => setGroupChatName(e.target.value)}
@@ -151,6 +158,7 @@ import {
               </FormControl>
               <FormControl>
                 <Input
+                  textColor={"white"}
                   placeholder="Add Users eg: John, Piyush, Jane"
                   mb={1}
                   onChange={(e) => handleSearch(e.target.value)}
@@ -180,8 +188,8 @@ import {
                   ))
               )}
             </ModalBody>
-            <ModalFooter>
-              <Button onClick={handleSubmit} colorScheme="blue">
+            <ModalFooter backgroundColor={"#566258"}>
+              <Button onClick={handleSubmit}backgroundColor={"gold"}>
                 Create Chat
               </Button>
             </ModalFooter>
