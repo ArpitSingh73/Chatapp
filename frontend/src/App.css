@@ -4,9 +4,6 @@
   min-height: 100vh;
   display: flex;
   background-color: #514e4e;
-  /* background-image: url("./monster-background-icons-b1.jpg"); */
-  /* background-position: center;  */
-  /* background-size: cover;  */
 }
 
 ::-webkit-scrollbar {
@@ -17,7 +14,6 @@
   background: rgba(136, 136, 136, 0.281);
 }
 
-/* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
 }

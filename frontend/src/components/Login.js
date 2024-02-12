@@ -24,7 +24,7 @@ const Login = () => {
       toast({
         title: "Please Fill all the Feilds",
         status: "warning",
-        duration: 1000,
+        duration: 2000,
         isClosable: true,
         position: "bottom",
       });
@@ -50,7 +50,7 @@ const Login = () => {
       toast({
         title: "Login Successful",
         status: "success",
-        duration: 5000,
+        duration: 2000,
         isClosable: true,
         position: "bottom",
       });
@@ -59,7 +59,6 @@ const Login = () => {
       console.log(user);
       console.log(data);
       localStorage.setItem("userInfo", JSON.stringify(data));
-      // localStorage.setItem("test", JSON.stringify("Aur bhai"));
       setLoading(false);
       history("/chats");
     } catch (error) {
@@ -68,7 +67,7 @@ const Login = () => {
         title: "Error Occured!",
         description: error.response.data.message,
         status: "error",
-        duration: 5000,
+        duration: 2000,
         isClosable: true,
         position: "bottom",
       });
@@ -82,11 +81,9 @@ const Login = () => {
         <FormLabel color={"#F9FBE7"}>Email Address</FormLabel>
         <Input
           height={"50px"}
-          // color={"#F9FBE7"}
           textColor={"white"}
           fontSize={"xl"}
           borderColor={"#0D0D0D"}
-          // borderRadius={"8"}
           borderWidth="2px"
           value={email}
           type="email"
@@ -102,7 +99,6 @@ const Login = () => {
             fontSize={"xl"}
             height={"50px"}
             borderColor={"#0D0D0D"}
-            // borderRadius={"8"}
             borderWidth="2px"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
@@ -126,7 +122,6 @@ const Login = () => {
         </InputGroup>
       </FormControl>
       <Button
-        // colorScheme=""
         bg="#268B81"
         width="100%"
         fontSize={"xl"}
@@ -137,17 +132,6 @@ const Login = () => {
       >
         Login
       </Button>
-      {/* <Button
-        variant="solid"
-        colorScheme="red"
-        width="100%"
-        onClick={() => {
-          setEmail("guest@example.com");
-          setPassword("123456");
-        }}
-      >
-        Get Guest User Credentials
-      </Button> */}
     </VStack>
   );
 };

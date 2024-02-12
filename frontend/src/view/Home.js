@@ -26,12 +26,9 @@ function Homepage() {
     <Container maxW="xl" centerContent>
       <Box
         d="flex"
-        // justifyContent="center"
-        // alignItems="center"
         textAlign="center"
         fontSize={"x-large"}
         p={3}
-        // backgroundColor="grey"
         bg="#878787"
         w="100%"
         m="25% 0 15px 0"
@@ -45,7 +42,6 @@ function Homepage() {
         </Text>
       </Box>
       <Box
-        // bg="#BEBFB1"
         w="100%"
         p={4}
         marginBottom={"10%"}

@@ -35,7 +35,7 @@ import {
         toast({
           title: "User already added",
           status: "warning",
-          duration: 5000,
+          duration: 2000,
           isClosable: true,
           position: "top",
         });
@@ -83,7 +83,7 @@ import {
         toast({
           title: "Please fill all the feilds",
           status: "warning",
-          duration: 5000,
+          duration: 2000,
           isClosable: true,
           position: "top",
         });
@@ -109,7 +109,7 @@ import {
         toast({
           title: "New Group Chat Created!",
           status: "success",
-          duration: 5000,
+          duration: 2000,
           isClosable: true,
           position: "bottom",
         });
@@ -118,7 +118,7 @@ import {
           title: "Failed to Create the Chat!",
           description: error.response.data,
           status: "error",
-          duration: 5000,
+          duration: 2000,
           isClosable: true,
           position: "bottom",
         });

@@ -32,7 +32,6 @@ const ProfileModal = ({ user, children }) => {
         <ModalOverlay />
         <ModalContent>
           <ModalHeader
-            // size={{ base: "xs" }}
             backgroundColor={"#566258"}
             fontSize="40px"
             fontFamily="Work sans"
@@ -44,7 +43,6 @@ const ProfileModal = ({ user, children }) => {
           </ModalHeader>
           <ModalCloseButton />
           <ModalBody
-            // backgroundColor={"#222424"}
             backgroundColor={"#222424"}
             display="flex"
             flexDir="column"
@@ -69,7 +67,6 @@ const ProfileModal = ({ user, children }) => {
             </Text>
           </ModalBody>
           <ModalFooter
-            // backgroundColor={"#606060"}
             backgroundColor={"#566258"}
             boxShadow={"dark-lg"}
             marginTop={"0%"}

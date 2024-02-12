@@ -10,10 +10,8 @@ const Chatbox = ({ fetchAgain, setFetchAgain }) => {
     <Box
       dispaly={{ base: selectedChat ? "flex" : "none", md: "flex" }}
       alignItems="center"
-      // justifyContent="space-between"
       flexDir="column"
       p={3}
-      // bg="red"
       bg="#566258"
       marginBottom={1}
       h={{ base: selectedChat? "100%" : "50%", md: "100%" }}

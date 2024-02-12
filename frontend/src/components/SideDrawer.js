@@ -131,10 +131,8 @@ function SideDrawer() {
         alignItems="center"
         bg="grey"
         w="100%"
-        // textColor={"white"}
         p="10px 10px 10px 10px"
         marginBottom={"9px"}
-        // borderWidth="5px"
       >
         <Tooltip
           label="Search Users to chat"
@@ -159,7 +157,6 @@ function SideDrawer() {
           <Menu>
             <MenuButton p={1}>
               <NotificationBadge
-                // backgroundColor={"gold"}
                 count={notification.length}
                 effect={Effect.SCALE}
               />
