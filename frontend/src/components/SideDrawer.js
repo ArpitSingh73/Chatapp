@@ -138,7 +138,6 @@ function SideDrawer() {
         <Tooltip
           label="Search Users to chat"
           hasArrow
-          // fontSize={"2xl"}
           placement="bottom-end"
           textColor={"white"}
         >
@@ -150,7 +149,7 @@ function SideDrawer() {
               fontWeight={"bold"}
               fontSize={"xl"}
             >
-              Search Users
+             
             </Text>
           </Button>
         </Tooltip>

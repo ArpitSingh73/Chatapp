@@ -28,12 +28,11 @@ const ProfileModal = ({ user, children }) => {
           onClick={onOpen}
         />
       )}
-      <Modal size="lg" onClose={onClose} isOpen={isOpen} isCentered>
+      <Modal size={{ base: "xs", md:"lg" }} onClose={onClose} isOpen={isOpen} isCentered>
         <ModalOverlay />
-        <ModalContent h="50%">
+        <ModalContent>
           <ModalHeader
-            // backdropBlur={"3xl"}
-            // backgroundColor={"#606060"}
+            // size={{ base: "xs" }}
             backgroundColor={"#566258"}
             fontSize="40px"
             fontFamily="Work sans"
@@ -54,7 +53,7 @@ const ProfileModal = ({ user, children }) => {
             boxShadow={"dark-lg"}
           >
             <Image
-              marginTop={"5%"}
+              marginTop={"4%"}
               borderRadius="full"
               boxSize="150px"
               src={user.pic}

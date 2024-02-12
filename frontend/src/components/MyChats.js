@@ -32,7 +32,7 @@ const MyChats = ({ fetchAgain }) => {
         title: "Error Occured!",
         description: "Failed to Load the chats",
         status: "error",
-        duration: 5000,
+        duration: 2000,
         isClosable: true,
         position: "bottom-left",
       });
@@ -58,25 +58,26 @@ const MyChats = ({ fetchAgain }) => {
       borderWidth="1px"
     >
       <Box
+        className="text"
         pb={3}
         px={3}
-        fontSize={{ base: "28px", md: "30px" }}
+        fontSize={{ base: "24px", md: "24px" }}
         fontFamily="Work sans"
         display="flex"
         w="100%"
         justifyContent="space-between"
         alignItems="center"
-        fontWeight={"semibold"}
+        fontWeight={"bold"}
       >
-        My Chats
+        History
         <GroupChatModal>
           <Button
             display="flex"
-            fontSize={{ base: "17px", md: "10px", lg: "17px" }}
+            fontSize={{ base: "17px", md: "9px", lg: "15px" }}
             rightIcon={<AddIcon />}
             backgroundColor={"gold"}
           >
-            New Group Chat
+            New Group
           </Button>
         </GroupChatModal>
       </Box>

@@ -15,7 +15,7 @@ import animationData from "../animations/typing.json";
 import io from "socket.io-client";
 import UpdateGroupChatModal from "./UpdateGroupChatModal";
 import { ChatState } from "../Context/Chatprovider";
-const ENDPOINT = "http://localhost:2000"; // "https://talk-a-tive.herokuapp.com"; -> After deployment
+const ENDPOINT = "http://localhost:5000"; // "https://talk-a-tive.herokuapp.com"; -> After deployment
 
 
 var socket, selectedChatCompare;
@@ -109,7 +109,7 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
   useEffect(() => {
     socket = io(ENDPOINT);
     socket.emit("setup", user);
-    socket.on("connected", () => setSocketConnected(true));
+    socket.on("connection", () => setSocketConnected(true));
     socket.on("typing", () => setIsTyping(true));
     socket.on("stop typing", () => setIsTyping(false));
 
@@ -187,8 +187,8 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
                 <>
                   {getSender(user, selectedChat.users)}
                   <ProfileModal
-                  user={getSenderFull(user, selectedChat.users)}
-                  // backgroundColor={"gold"}
+                    user={getSenderFull(user, selectedChat.users)}
+                    // backgroundColor={"gold"}
                   />
                 </>
               ) : (
@@ -225,7 +225,6 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
                 h={20}
                 alignSelf="center"
                 margin="auto"
-
               />
             ) : (
               <div className="messages">
@@ -255,7 +254,7 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
                   <></>
                 )}
                 <Input
-                  variant="filled"  
+                  variant="filled"
                   backgroundColor="#E0E0E0"
                   placeholder="Enter a message..."
                   value={newMessage}
@@ -277,11 +276,12 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
         <Box
           display="flex"
           alignItems="center"
-          justifyContent="center"
-          h="100%"
+            justifyContent="center"
+            textAlign={"center"}
+          h={{ base: "100%", md: "70%" }}
         >
-          <Text fontSize="3xl" pb={3} fontFamily="Work sans">
-            Click on a user to start chatting
+          <Text fontSize="3xl" pb={3} fontFamily="Work sans" fontWeight={"bold"} >
+            Search and select a user to start chatting!
           </Text>
         </Box>
       )}
