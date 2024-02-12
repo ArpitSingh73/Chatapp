@@ -132,7 +132,8 @@ function SideDrawer() {
         bg="grey"
         w="100%"
         // textColor={"white"}
-        p="15px 10px 15px 10px"
+        p="10px 10px 10px 10px"
+        marginBottom={"9px"}
         // borderWidth="5px"
       >
         <Tooltip
@@ -148,12 +149,12 @@ function SideDrawer() {
               px={4}
               fontWeight={"bold"}
               fontSize={"xl"}
-            >
-             
-            </Text>
+            ></Text>
           </Button>
         </Tooltip>
-        <Text fontSize="2xl">ChaT</Text>
+        <Text fontSize="4xl" fontFamily={"fantasy"}>
+          TypE
+        </Text>
         <div>
           <Menu>
             <MenuButton p={1}>

@@ -40,8 +40,8 @@ function Homepage() {
         borderWidth="2px"
         boxShadow={"2px 3px 1px"}
       >
-        <Text fontSize="5xl" textDecoration={"line-through"}>
-          TalK
+        <Text fontSize="5xl" fontFamily={"fantasy"}>
+          TypE
         </Text>
       </Box>
       <Box
@@ -61,8 +61,12 @@ function Homepage() {
           bgColor={""}
         >
           <TabList mb="1em">
-            <Tab textColor={"white"} fontSize={"2xl"}>Login</Tab>
-            <Tab textColor={"white"} fontSize={"2xl"}>Sign Up</Tab>
+            <Tab textColor={"white"} fontSize={"2xl"}>
+              Login
+            </Tab>
+            <Tab textColor={"white"} fontSize={"2xl"}>
+              Sign Up
+            </Tab>
           </TabList>
           <TabPanels>
             <TabPanel>
