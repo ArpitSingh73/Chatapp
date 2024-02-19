@@ -16,10 +16,11 @@ const Login = () => {
   const [password, setPassword] = useState();
   const [loading, setLoading] = useState(false);
 
-  const history = useNavigate()
-  const { setUser, user } = ChatState()
+  const history = useNavigate();
+  const { setUser, user } = ChatState();
   const submitHandler = async () => {
     setLoading(true);
+
     if (!email || !password) {
       toast({
         title: "Please Fill all the Feilds",
@@ -30,8 +31,8 @@ const Login = () => {
       });
       setLoading(false);
       return;
-    }
-
+    } 
+    
     try {
       const config = {
         headers: {
@@ -45,8 +46,8 @@ const Login = () => {
         config
       );
       const x = JSON.stringify(data);
-      console.log(x)
-      console.log(user);
+      // console.log(x);
+      // console.log(user);
       toast({
         title: "Login Successful",
         status: "success",
@@ -54,15 +55,14 @@ const Login = () => {
         isClosable: true,
         position: "bottom",
       });
-     
+
       setUser(data);
-      console.log(user);
-      console.log(data);
+      // console.log(user);
+      // console.log(data);
       localStorage.setItem("userInfo", JSON.stringify(data));
       setLoading(false);
       history("/chats");
     } catch (error) {
-
       toast({
         title: "Error Occured!",
         description: error.response.data.message,

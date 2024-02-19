@@ -20,9 +20,13 @@ const Signup = () => {
   const [password, setPassword] = useState();
   const [pic, setPic] = useState();
   const [picLoading, setPicLoading] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const submitHandler = async () => {
     setPicLoading(true);
+    setLoading(true);
+
+    // console.log(password);
     if (!name || !email || !password || !confirmpassword) {
       toast({
         title: "Please Fill all the Feilds",
@@ -43,8 +47,28 @@ const Signup = () => {
         position: "bottom",
       });
       return;
+    } else if (String(password).length < 5) {
+      toast({
+        title: "Password must be of atleast 5 char",
+        status: "warning",
+        duration: 2000,
+        isClosable: true,
+        position: "bottom",
+      });
+      setLoading(false);
+      return;
+    } else if (!String(email).includes("@gmail.com")) {
+      toast({
+        title: "Enter a valid email",
+        status: "warning",
+        duration: 2000,
+        isClosable: true,
+        position: "bottom",
+      });
+      setLoading(false);
+      return;
     }
-    console.log(name, email, password, pic);
+    // console.log(name, email, password, pic);
     try {
       const config = {
         headers: {
@@ -61,7 +85,7 @@ const Signup = () => {
         },
         config
       );
-      console.log(data);
+      // console.log(data);
       toast({
         title: "Registration Successful",
         status: "success",
@@ -114,11 +138,11 @@ const Signup = () => {
         .then((res) => res.json())
         .then((data) => {
           setPic(data.url.toString());
-          console.log(data.url.toString());
+          // console.log(data.url.toString());
           setPicLoading(false);
         })
         .catch((err) => {
-          console.log(err);
+          // console.log(err);
           setPicLoading(false);
         });
     } else {
@@ -246,6 +270,7 @@ const Signup = () => {
         style={{ marginTop: 15 }}
         onClick={submitHandler}
         isLoading={picLoading}
+        isLoading={loading}
       >
         Sign Up
       </Button>
